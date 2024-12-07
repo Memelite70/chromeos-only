@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="apple-touch-icon" sizes="128x128" href="favicon.ico">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<script>
+const iframe = document.getElementById('iframe'); 
+
+iframe.onload = loadTitle; 
+function loadTitle() {
+  const iframeTitle = iframe.contentDocument.title;
+  document.title = iframeTitle;
+}
+
+setInterval(loadTitle, 1000);
+</script>
+    <link rel="apple-touch-icon" sizes="128x128" href="src/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="src/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
@@ -23,7 +34,7 @@
 </head>
 <body onload="detectChromeOS()">
         <div id="container">
-        <iframe id="iframe" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; background: margin:0; padding:0; overflow:hidden; z-index:9999999;"></iframe>
+        <iframe id="iframe" src="" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; background: margin:0; padding:0; overflow:hidden; z-index:9999999;"></iframe>
     </div>
 </body>
 </html>
